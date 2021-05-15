@@ -35,6 +35,7 @@ import android.webkit.MimeTypeMap
 import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
 import androidx.appcompat.graphics.drawable.DrawerArrowDrawable
+import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.DrawableCompat
 import androidx.preference.PreferenceManager
@@ -45,7 +46,6 @@ import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.customview.customView
 import com.afollestad.materialdialogs.customview.getCustomView
 import com.afterroot.core.R
-import kotlinx.android.synthetic.main.dialog_progress.view.*
 
 /**
  * Sets visibility of view with optional [transition]
@@ -263,5 +263,5 @@ fun Context.showStaticProgressDialog(progressText: String): MaterialDialog {
  * @author [Sandip Vaghela](http://github.com/thesandipv)
  */
 fun MaterialDialog.updateProgressText(progressText: String) {
-    getCustomView().text_progress.text = progressText
+    getCustomView().findViewById<AppCompatTextView>(R.id.text_progress).text = progressText
 }
